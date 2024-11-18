@@ -1,0 +1,76 @@
+import React from "react";
+
+
+const users = [
+  {
+    name: "Lelah Nichols",
+    location: "Troy, MI",
+    tags: ["clothes", "stem"],
+  },
+  {
+    name: "Jesus Weiss",
+    location: "Fort Worth, TX",
+    tags: ["headset", "gadget", "speed", "winter"],
+  },
+  {
+    name: "Annie Rice",
+    location: "Austin, TX",
+    tags: ["road", "mountain", "trip", "earth", "nature"],
+  },
+  {
+    name: "Robert Brower",
+    location: "Cincinnati, OH",
+    tags: ["maintenance", "gears", "frames", "repair"],
+  },
+  {
+    name: "Amy Campbell",
+    location: "Warrior, AL",
+    tags: ["music", "disks"],
+  },
+  {
+    name: "Anthony S. Morin",
+    location: "Lyndhurst, NJ",
+    tags: ["vintage", "electric"],
+  },
+];
+
+const Users = () => {
+  return (
+    <div className="users-container">
+      <h1>Users</h1>
+      <div className="tabs">
+        <button>Reputation</button>
+        <button className="active">New users</button>
+        <button>Voters</button>
+        <button>Editors</button>
+        <button>Moderators</button>
+      </div>
+
+      <div className="search-bar">
+        <input type="text" placeholder="Search users" />
+      </div>
+
+      <div className="user-grid">
+        {users.map((user, index) => (
+          <div className="user-card" key={index}>
+            <div className="user-image"></div>
+            <h3>{user.name}</h3>
+            <p>{user.location}</p>
+
+            <div className="tags">
+              {user.tags.map((tag, i) => (
+                <span className="tag" key={i}>
+                  {tag}
+                </span>
+
+              ))}
+            </div>
+          </div>
+        ))}
+
+      </div>
+    </div>
+  );
+};
+
+export default Users;

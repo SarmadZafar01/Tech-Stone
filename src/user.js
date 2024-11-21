@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa"; // Import FontAwesome search icon
+import { FaSearch } from "react-icons/fa"; 
 
 const users = [
   {
@@ -35,7 +35,7 @@ const users = [
 ];
 
 const Users = () => {
-  const [activeIndex, setActiveIndex] = useState(0); // Track the active user index
+  const [activeIndex, setActiveIndex] = useState(0); 
 
   return (
     <div className="users-container">
@@ -56,9 +56,9 @@ const Users = () => {
       <div className="user-grid">
         {users.map((user, index) => (
           <div
-            className={`user-card ${activeIndex === index ? "active" : ""}`} // Add 'active' class if the box is active
+            className={`user-card ${activeIndex === index ? "active" : ""}`} 
             key={index}
-            onClick={() => setActiveIndex(index)} // Set the active user on click
+            onClick={() => setActiveIndex(index)}
           >
             <div className="user-image"></div>
             <h3>{user.name}</h3>
